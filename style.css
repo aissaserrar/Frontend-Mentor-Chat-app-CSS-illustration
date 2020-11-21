@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+:root {
+    font-family: 'Rubik', sans-serif;
+    font-size: 10px;
+    /* colors */
+    --bg-color: #F9F4FA;
+    --pale-violet: hsl(276, 100%, 81%);
+    --moderate-violet: hsl(276, 55%, 52%);
+    --desaturated-dark-violet: hsl(271, 15%, 43%);
+    --grayish-blue: hsl(206, 6%, 79%);
+    --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+    --dark-grayish-violet: hsl(270, 7%, 64%);
+    --light-grayish-violet: hsl(270, 20%, 96%);
+    --very-dark-desaturated-violet: hsl(271, 36%, 24%);
+    --very-light-magenta: hsl(289, 100%, 72%);
+    /* gradient colors */
+    --light-magenta: hsl(293, 100%, 63%);
+    --light-violet: hsl(264, 100%, 61%);
+
+    --app-bar-gradient: linear-gradient(-90deg, var(--light-magenta), var(--light-violet));
+    --bg-gradient: linear-gradient(45deg, var(--light-magenta), var(--light-violet));
+    --bubble-gradient: linear-gradient(90deg, var(--light-magenta), var(--light-violet));
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-size: 1.6rem;
+    overflow: hidden;
+    background-color: var(--bg-color);
+}
+
+body::before {
+    content: '';
+    display: block;
+    width: 40%;
+    height: 80%;
+    background: var(--bg-gradient);
+    border-radius: 0 0 500px 500px;
+
+    position: absolute;
+    left: -10%;
+    z-index: -1;
+}
+
+main {
+    width: 70%;
+    height: 100%;
+    margin: 0% auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 20px;
+}
+
+.fas {
+    font-size: 1rem;
+}
+
+/* chat app styling */
+.chat-app {
+    width: 300px;
+    height: 600px;
+    border: 12px solid white;
+    border-radius: 30px;
+    overflow: hidden;
+    background-color: var(--light-grayish-violet);
+    box-shadow: 5px 15px 50px 0px var(--grayish-blue);
+}
+
+.chat-app::before {
+    content: '';
+    display: block;
+    width: 180px;
+    height: 25px;
+    background-color: white;
+    position: relative;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.chat-app::after {
+    content: '';
+    display: block;
+    width: 100px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom: var(--pale-violet) 3px solid;
+}
+
+/* .chat-app>* {
+    padding: 10px;
+} */
+
+.chat-app .app-bar {
+    width: 100%;
+    height: auto;
+    margin-top: -30px;
+    padding-top: 10px;
+    padding: 10px;
+    padding-top: 40px;
+    background: var(--app-bar-gradient);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    font-size: .9rem;
+    color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.chat-app .app-bar>* {
+    margin-right: 10px;
+}
+
+.chat-app .app-bar>.fa-ellipsis-v {
+    margin: auto;
+    margin-right: 0;
+}
+
+.chat-app .app-bar .avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    padding: 2px;
+    background: white;
+}
+
+.chat-app .app-bar p {
+    color: var(--pale-violet);
+    margin-top: 2px;
+}
+
+/* left message styling */
+.chat-app .left-message {
+    max-width: 60%;
+    margin: 10px;
+    padding: 5px 10px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--moderate-violet);
+    background-color: var(--grayish-blue);
+    border-radius: 10px 10px 10px 5px;
+}
+
+/* right message styling */
+.chat-app .right-message {
+    max-width: 60%;
+    margin: 10px 10px 10px auto;
+    padding: 5px 10px;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: var(--desaturated-dark-violet);
+    background-color: #fff;
+    border-radius: 10px 10px 5px 10px;
+    box-shadow: 0px 2px 3px 0px var(--grayish-blue);
+}
+
+.chat-app .right-message:nth-child(3) {
+    max-width: 40%;
+    margin-bottom: 20px;
+}
+
+.chat-app .images {
+    direction: rtl;
+    margin: auto;
+    margin-top: 20px;
+    padding: 0px 10px;
+    margin-right: 0px;
+}
+
+.chat-app .images>img {
+    display: inline-block;
+    width: 50px;
+    margin-left: 5px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+/* gradient bubble styling */
+.chat-app .gradient-bubble {
+    max-width: 80%;
+    padding: 15px;
+    background: var(--bubble-gradient);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-app .gradient-bubble div {
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--very-light-magenta);
+    border-radius: 3px;
+}
+
+.chat-app .price {
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+/* text-input styling */
+.chat-app .text-input {
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 5px 10px;
+    padding-right: 0px;
+    border-radius: 50px;
+    color: var(--grayish-blue);
+    font-size: 1rem;
+    box-shadow: 0px 2px 3px 0px var(--grayish-blue);
+}
+
+.btn {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    background-color: var(--very-dark-desaturated-violet);
+    padding: 5px;
+    text-align: center;
+    color: white;
+    border-radius: 50px;
+}
+
+/* hero styling */
+.hero {
+    width: 50%;
+}
+
+.hero .hero-text {
+    color: var(--very-dark-desaturated-violet);
+    line-height: 10rem;
+    font-size: 4rem;
+}
+
+.hero p {
+    color: var(--dark-grayish-violet);
+    line-height: 3rem;
+    text-align: justify;
+}
+
+footer {
+    width: 100vw;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    text-align: center;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media(max-width:375px) {
+    body {
+        height: auto;
+        overflow: visible;
+    }
+
+    body::before {
+        width: 70%;
+        height: 70%;
+    }
+
+    main {
+        flex-direction: column;
+        width: 80%;
+    }
+
+    .hero {
+        width: 80%;
+    }
+
+    .hero .hero-text {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        text-align: center;
+    }
+
+
+}
